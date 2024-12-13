@@ -1,0 +1,53 @@
+:root {
+    --font-main-color: #303030be;
+    --font-sub-color: #f0f0f0;
+    --primary-color: #F7FBFC;
+    --secondary-color: #D6E6F2;
+    --tertiary-color: #B9D7EA;
+    --quaternary-color: #769FCD;
+    font-family: "Yu Gothic";
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+a, button {
+    outline-offset: 2px;
+    &:focus-visible {
+        outline: 2px solid var(--tertiary-color);
+    }
+}
+.header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 1px 1px 10px 1px var(--primary-color);
+}
+.top-link {
+    color: var(--font-main-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    
+}
+.header-navigation-menu {
+    margin-right: 50px;
+}
+.header-navigation-menu__list {
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 100%;
+}
+.header-navigation-menu__list--item {
+    
+}
+.header-navigation-menu__list--item > a {
+    text-decoration: none;
+    color: var(--quaternary-color);
+}
