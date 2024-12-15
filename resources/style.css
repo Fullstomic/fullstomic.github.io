@@ -5,6 +5,7 @@
     --secondary-color: #D6E6F2;
     --tertiary-color: #B9D7EA;
     --quaternary-color: #769FCD;
+    --hover-primary-color: #1f66b7;
     font-family: "Yu Gothic";
 }
 body {
@@ -16,23 +17,27 @@ body {
 }
 a, button {
     outline-offset: 2px;
+    outline: 2px solid transparent;
     &:focus-visible {
         outline: 2px solid var(--tertiary-color);
-    }
+    }   
 }
 .header {
     align-items: center;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    box-shadow: 1px 1px 10px 1px var(--primary-color);
+    box-shadow: 1px 1px 10px 1px var(--secondary-color);
 }
 .top-link {
     color: var(--font-main-color);
     font-size: 1.5rem;
     font-weight: 600;
     text-decoration: none;
-    
+    transition: all 0.2s;
+    &:hover {
+        color: var(--quaternary-color);
+    }
 }
 .header-navigation-menu {
     margin-right: 50px;
@@ -50,4 +55,25 @@ a, button {
 .header-navigation-menu__list--item > a {
     text-decoration: none;
     color: var(--quaternary-color);
+    transition: all 0.2s;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 0%;
+        height: 1px;
+        opacity: 0;
+        background-color: var(--hover-primary-color);
+        transition: all 0.2s;
+    }
+    &:hover {
+        color: var(--hover-primary-color);
+        &::after{
+            opacity: 1;
+            width: 100%;
+        }
+    }
 }
